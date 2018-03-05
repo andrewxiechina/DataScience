@@ -67,3 +67,11 @@ Plot
 ```python
 df.Temperature['2010-Jun':'2010-Aug'].plot()
 ```
+
+%
+```python
+yearly = post2008.resample('A').last()
+
+# Compute percentage growth of yearly: yearly['growth']
+yearly['growth'] = yearly.pct_change() * 100
+```
