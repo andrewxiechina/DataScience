@@ -102,7 +102,7 @@ Interpolate (Guess)
 ts2_interp = ts2.reindex(ts1.index).interpolate(how='linear')
 ```
 
-# Time Zone
+Time Zone
 ```python
 # Combine two columns of data to create a datetime series: times_tz_none 
 times_tz_none = pd.to_datetime( la['Date (MM/DD/YYYY)'] + ' ' + la['Wheels-off Time'] )
@@ -111,7 +111,7 @@ times_tz_none = pd.to_datetime( la['Date (MM/DD/YYYY)'] + ' ' + la['Wheels-off T
 times_tz_central = times_tz_none.dt.tz_localize('US/Central')
 ```
 
-# Set Index
+Set Index
 ```python
 # Convert the 'Date' column into a collection of datetime objects: df.Date
 df.Date = pd.to_datetime(df.Date)
@@ -120,7 +120,7 @@ df.Date = pd.to_datetime(df.Date)
 df.set_index('Date', inplace=True)
 ```
 
-# Plot
+Plot
 ```python
 df.Temperature['2010-Jun':'2010-Aug'].plot()
 ```
