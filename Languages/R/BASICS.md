@@ -1,4 +1,4 @@
-###
+### Matrics
 ```r
 # Box office Star Wars (in millions!)
 new_hope <- c(460.998, 314.4)
