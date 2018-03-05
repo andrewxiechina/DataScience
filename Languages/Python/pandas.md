@@ -55,3 +55,9 @@ df.quantile([0.05,0.95])
 titanic.loc[titanic['pclass'] == 1]
 ```
 
+# Fill
+```python
+bronze.add(silver, fill_value=0)
+```
+
+
