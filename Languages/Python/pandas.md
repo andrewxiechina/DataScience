@@ -155,3 +155,29 @@ kv_pairs = pd.melt(users_idx, col_level=0)
 ```python
 bycity = users.unstack(level='city')
 ```
+
+# Spread
+```python
+# Group gapminder by 'Year' and 'region': by_year_region
+by_year_region = gapminder.groupby(level=['Year','region'])
+
+# Define the function to compute spread: spread
+def spread(series):
+    return series.max() - series.min()
+
+# Create the dictionary: aggregator
+aggregator = {'population':'sum', 'child_mortality':'mean', 'gdp':spread}
+
+# Aggregate by_year_region using the dictionary: aggregated
+aggregated = by_year_region.agg(aggregator)
+```
+
+# Filling Missing Data / Imputation by Group
+```python
+# Write a function that imputes median
+def impute_median(series):
+    return series.fillna(series.median())
+
+# Impute age and assign to titanic.age
+titanic.age = by_sex_class.age.transform(impute_median)
+```
