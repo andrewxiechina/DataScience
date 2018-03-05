@@ -142,3 +142,16 @@ election['color'] = election['winner'].map(red_vs_blue)
 # Add in the margins: signups_and_visitors_total 
 signups_and_visitors_total = users.pivot_table(index='weekday', aggfunc=sum, margins=True)
 ```
+
+```python
+# Set the new index: users_idx
+users_idx = users.set_index(['city', 'weekday'])
+
+# Obtain the key-value pairs: kv_pairs
+kv_pairs = pd.melt(users_idx, col_level=0)
+```
+
+# Stack/Unstack
+```python
+bycity = users.unstack(level='city')
+```
