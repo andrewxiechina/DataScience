@@ -1,4 +1,4 @@
-# Python Read
+# Python
 
 ```python
 file = open('moby_dick.txt', mode='r')
